@@ -9,12 +9,17 @@ namespace ExampleGame.Home
     public class HomeView : BaseSceneView
     {
         [SerializeField]
-        private Button _playButton;
+        private Button _gamePlayButton;
+        [SerializeField]
+        private Button _gameSystemButton;
         
-        public void SetCallbacks(UnityAction onClickPlayButton)
+        public void SetCallbacks(UnityAction onClickGamePlayButton, UnityAction onClickGameSystemButton)
         {
-            _playButton.onClick.RemoveAllListeners();
-            _playButton.onClick.AddListener(onClickPlayButton);
+            _gamePlayButton.onClick.RemoveAllListeners();
+            _gameSystemButton.onClick.RemoveAllListeners();
+            _gamePlayButton.onClick.AddListener(onClickGamePlayButton);
+            _gameSystemButton.onClick.AddListener(onClickGameSystemButton);
+
         }
     }
 }

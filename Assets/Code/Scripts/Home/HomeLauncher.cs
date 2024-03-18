@@ -20,7 +20,7 @@ namespace ExampleGame.Home
         protected override IEnumerator InitSceneObject()
         {
             yield return null;
-            _view.SetCallbacks(OnClickPlayButton);
+            _view.SetCallbacks(OnClickGamePlayButton, OnClickGameSystemButton);
         }
 
         protected override IEnumerator LaunchScene()
@@ -33,9 +33,14 @@ namespace ExampleGame.Home
 
         public static IMain Instance { get; internal set; }
 
-        private void OnClickPlayButton()
+        private void OnClickGamePlayButton()
         {
             SceneLoader.Instance.LoadScene("Gameplay");
+        }
+
+        private void OnClickGameSystemButton()
+        {
+            SceneLoader.Instance.LoadScene("GameSystem");
         }
     }
 }

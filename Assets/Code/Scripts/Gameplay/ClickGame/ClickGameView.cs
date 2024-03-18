@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Agate.MVC.Base;
 using UnityEngine.UI;
